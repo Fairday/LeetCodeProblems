@@ -4,12 +4,34 @@ using System.Collections.Generic;
 
 namespace ALGON.LeetCodeProblems.Design
 {
+    public interface ICanDeferHeapify
+    {
+        void DeferHeapify();
+        void RestoreHeapify();
+    }
+
+    public struct HeapifyDeferState : IDisposable
+    {
+        ICanDeferHeapify _DeferSource;
+
+        public HeapifyDeferState(ICanDeferHeapify deferSource)
+        {
+            _DeferSource = deferSource;
+            _DeferSource.DeferHeapify();
+        }
+
+        public void Dispose()
+        {
+            _DeferSource.RestoreHeapify();
+        }
+    }
+
     public enum SortDirection
     {
         Ascending, Descending
     }
 
-    public class Heap<T> : IEnumerable<T>
+    public class Heap<T> : IEnumerable<T>, ICanDeferHeapify
         where T : IComparable<T>
     {
         List<T> _Inner;
@@ -25,6 +47,44 @@ namespace ALGON.LeetCodeProblems.Design
         public bool IsEmpty => Count == 0;
         public bool IsAscending => SortDirection == SortDirection.Ascending;
         public bool IsDescending => SortDirection == SortDirection.Descending;
+        public bool IsHeapifyDeferred { get; private set; }
+
+        public void DeferHeapify()
+        {
+            IsHeapifyDeferred = true;
+        }
+
+        public void RestoreHeapify() 
+        {
+            IsHeapifyDeferred = false;
+            RestoreHeapOrder();
+        }
+
+        public bool RemoveIf(Predicate<T> predicate) 
+        {
+            bool removed = false;
+            foreach (var item in _Inner)
+            {
+                if (predicate(item)) 
+                {
+                    _Inner.Remove(item);
+                    Count--;
+                    removed = true;
+                    break;
+                }
+            }
+
+            if (removed && !IsHeapifyDeferred)
+                RestoreHeapOrder();
+
+            return removed;
+        }
+
+        void RestoreHeapOrder() 
+        {
+            for (int i = Count / 2; i >= 0; i--)
+                Heapify(i);
+        }
 
         public void Push(T node)
         {
@@ -46,7 +106,7 @@ namespace ALGON.LeetCodeProblems.Design
             if (pos == 0)
                 return false;
             else
-                return pos > 0 ? (IsAscending ? true : false) : (IsDescending ? false : true);
+                return pos > 0 ? (IsAscending ? true : false) : (IsDescending ? true : false);
         }
 
         public T Peek() 
@@ -72,21 +132,21 @@ namespace ALGON.LeetCodeProblems.Design
         {
             var left = Left(i);
             var right = Right(i);
-            var smallestrOrLargest = i;
+            var smallestOrLargest = i;
 
-            if (left < Count && Compare(_Inner[left], _Inner[smallestrOrLargest]))
+            if (left < Count && Compare(_Inner[smallestOrLargest], _Inner[left]))
             {
-                smallestrOrLargest = left;
+                smallestOrLargest = left;
             }
-            else if (right < Count && Compare(_Inner[right], _Inner[smallestrOrLargest]))
+            if (right < Count && Compare(_Inner[smallestOrLargest], _Inner[right]))
             {
-                smallestrOrLargest = right;
+                smallestOrLargest = right;
             }
 
-            if (smallestrOrLargest != i)
+            if (smallestOrLargest != i)
             {
-                Swap(smallestrOrLargest, i);
-                Heapify(smallestrOrLargest);
+                Swap(smallestOrLargest, i);
+                Heapify(smallestOrLargest);
             }
         }
 
