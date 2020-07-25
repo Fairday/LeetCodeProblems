@@ -19,7 +19,7 @@
     Example:
 
         MyCircularQueue circularQueue = new MyCircularQueue(3); // set the size to be 3
-            circularQueue.enQueue(1);  // return true
+        circularQueue.enQueue(1);  // return true
         circularQueue.enQueue(2);  // return true
         circularQueue.enQueue(3);  // return true
         circularQueue.enQueue(4);  // return false, the queue is full
@@ -34,7 +34,7 @@
         All values will be in the range of[0, 1000].
         The number of operations will be in the range of[1, 1000].
         Please do not use the built-in Queue library.*/
-    public class OptimizedSpaceCapacityQueue
+    public class CircularQueue
     {
         int[] inner;
         int head = -1;
@@ -42,7 +42,7 @@
         int capacity;
 
         /** Initialize your data structure here. Set the size of the queue to be k. */
-        public OptimizedSpaceCapacityQueue(int k)
+        public CircularQueue(int k)
         {
             inner = new int[k];
             capacity = k;
