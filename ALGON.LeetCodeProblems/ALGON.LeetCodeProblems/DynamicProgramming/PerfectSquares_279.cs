@@ -15,7 +15,7 @@ namespace ALGON.LeetCodeProblems.DynamicProgramming
     Input: n = 13
     Output: 2
     Explanation: 13 = 4 + 9.*/
-    public class Solution
+    public class Solution_279
     {
         //Good explanation
         //https://www.youtube.com/watch?v=dOOzOsfj31I

@@ -56,7 +56,7 @@ namespace ALGON.LeetCodeProblems.Tree
             return false;
         }
 
-        // Using BST feature (ordering)
+        // Using DFS feature (ordering)
         public bool FindTarget(TreeNode root, int k)
         {
             if (root == null)
