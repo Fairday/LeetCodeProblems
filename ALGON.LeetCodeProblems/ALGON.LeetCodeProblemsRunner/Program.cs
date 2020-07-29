@@ -1,27 +1,17 @@
-﻿namespace ALGON.LeetCodeProblemsRunner
+﻿using ALGON.LeetCodeProblems.Sorting;
+
+namespace ALGON.LeetCodeProblemsRunner
 {
     class Program
     {
         static void Main(string[] args)
         {
-            int buff = 0;
-            string s = "abcd";
-            string t = "abcd";
-            for (int i = 0; i < s.Length; i++)
-            {
-                var x1 = (int)s[i];
-                var b1 = System.Convert.ToString(x1, 2);
-                var b2 = System.Convert.ToString(buff, 2);
-                var x2 = buff ^ x1;
-                buff = x2;
-            }
-            for (int i = 0; i < t.Length; i++)
-            {
-                var x1 = (int)t[i];
-                var x2 = buff ^ x1;
-                buff = x2;
-            }
-            var r = (char)buff;
+            var array1 = new int[] { 3, 5, 9, 6, 7, 1, 8};
+            var array2 = new int[] { 3, 5, 4, 6, 6, 5, 6, 7, 1, 7 };
+            BubbleSort.Sort(array1);
+            QuickSort.Sort_3W(array2);
+            var el = QuickSelection.GetKthElement(array2, 1);
+            var isEqual = ArrayComparer.IsEqual(array1, array2);
         }
     }
 }
