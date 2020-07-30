@@ -1,4 +1,4 @@
-﻿using ALGON.LeetCodeProblems.PArray;
+﻿using ALGON.LeetCodeProblems.Backtracking;
 
 namespace ALGON.LeetCodeProblemsRunner
 {
@@ -6,8 +6,8 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var cs = new Solution_40();
-            cs.CombinationSum2(new int[] { 1, 1, 2, 3}, 4);
+            var cs = new Solution_139();
+            cs.WordBreak("leetcode", new string[] {  "leet", "lee", "t", "code" });
         }
     }
 }
