@@ -19,7 +19,7 @@ namespace ALGON.LeetCodeProblems.Design
                 _Adjacencies[i] = new List<int>();
         }
 
-        public virtual IEnumerable<int> GetVertexAdjcency(int v)
+        public virtual IList<int> GetVertexAdjcency(int v)
             => _Adjacencies[v];
     }
 

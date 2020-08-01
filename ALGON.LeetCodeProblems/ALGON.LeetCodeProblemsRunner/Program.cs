@@ -6,22 +6,19 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var graph = new UndirectedGraph(6);
+            var graph = new DirectedGraph(6);
             graph.AddEdge(0, 1);
+            graph.AddEdge(4, 1);
             graph.AddEdge(1, 2);
-            graph.AddEdge(1, 4);
-            graph.AddEdge(2, 4);
-            graph.AddEdge(2, 3);
+            graph.AddEdge(4, 2);
+            graph.AddEdge(4, 3);
+            graph.AddEdge(3, 2);
             graph.AddEdge(2, 5);
             graph.AddEdge(3, 5);
             graph.AddEdge(0, 5);
 
-            var dfs = new UndirectedGraphBfs(2, graph);
-            var traverse = dfs.Traverse;
-
-            var p3 = dfs.GetPath(3);
-            var p2 = dfs.GetPath(2);
-            var p5 = dfs.GetPath(0);
+            var bfs = new TopologicalSortGraphViaBfsIndegrees(graph);
+            var items = bfs.TopologicalOrder;
         }
     }
 }
