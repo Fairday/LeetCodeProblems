@@ -1,4 +1,4 @@
-﻿using ALGON.LeetCodeProblems.PArray;
+﻿using ALGON.LeetCodeProblems.Design;
 
 namespace ALGON.LeetCodeProblemsRunner
 {
@@ -6,8 +6,21 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var cs = new Solution_40();
-            cs.CombinationSum2(new int[] { 1, 1, 2, 3}, 4);
+            var graph = new UndirectedGraph(6);
+            graph.AddEdge(0, 1);
+            graph.AddEdge(1, 2);
+            graph.AddEdge(1, 4);
+            graph.AddEdge(2, 4);
+            graph.AddEdge(2, 3);
+            graph.AddEdge(2, 5);
+            graph.AddEdge(3, 5);
+
+            var dfs = new UndirectedGraphDfs<int>(0, graph);
+            var traverse = dfs.Traverse;
+
+            var p3 = dfs.GetPath(3);
+            var p2 = dfs.GetPath(2);
+            var p5 = dfs.GetPath(4);
         }
     }
 }
