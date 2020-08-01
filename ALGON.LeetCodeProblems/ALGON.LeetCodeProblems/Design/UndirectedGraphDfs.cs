@@ -2,38 +2,18 @@
 
 namespace ALGON.LeetCodeProblems.Design
 {
-    public class UndirectedGraphDfs<T>
+    public class UndirectedGraphDfs : UndirectedGraphTraverse
     {
-        int[] _EdgeTo;
-        UndirectedGraph _Graph;
-        int _StartVertex;
-        LinkedList<int> _Items;
-
-        public UndirectedGraphDfs(int startVertex, UndirectedGraph graph)
+        public UndirectedGraphDfs(int startVertex, UndirectedGraph graph) : base(startVertex, graph)
         {
-            _Graph = graph;
-            _StartVertex = startVertex;
-            _Items = new LinkedList<int>();
-            _EdgeTo = new int[graph.V];
-            for (int i = 0; i < graph.V; i++)
-                _EdgeTo[i] = -1;
-            var marked = new bool[graph.V];
-            dfs(_StartVertex, _Items, marked);
         }
 
-        public IEnumerable<int> GetPath(int endVertex) 
+        protected override void CreateTraverse(int startVertex, ICollection<int> items, bool[] marked, UndirectedGraph graph)
         {
-            var ls = new List<int>();
-            var curr = endVertex;
-            while (curr > -1) 
-            {
-                ls.Add(curr);
-                curr = _EdgeTo[curr];
-            }
-            return ls;
+            dfs(startVertex, items, marked, graph);
         }
 
-        void dfs(int vertex, ICollection<int> items, bool[] marked) 
+        void dfs(int vertex, ICollection<int> items, bool[] marked, UndirectedGraph graph) 
         {
             if (marked[vertex])
                 return;
@@ -41,16 +21,14 @@ namespace ALGON.LeetCodeProblems.Design
             marked[vertex] = true;
             items.Add(vertex);
 
-            foreach (var w in _Graph.GetVertexAdjcency(vertex))
+            foreach (var w in graph.GetVertexAdjcency(vertex))
             {
                 if (!marked[w]) 
                 {
-                    dfs(w, items, marked);
+                    dfs(w, items, marked, graph);
                     _EdgeTo[w] = vertex;
                 }
             }
         }
-
-        public IEnumerable<int> Traverse => _Items;
     }
 }

@@ -14,13 +14,14 @@ namespace ALGON.LeetCodeProblemsRunner
             graph.AddEdge(2, 3);
             graph.AddEdge(2, 5);
             graph.AddEdge(3, 5);
+            graph.AddEdge(0, 5);
 
-            var dfs = new UndirectedGraphDfs<int>(0, graph);
+            var dfs = new UndirectedGraphBfs(2, graph);
             var traverse = dfs.Traverse;
 
             var p3 = dfs.GetPath(3);
             var p2 = dfs.GetPath(2);
-            var p5 = dfs.GetPath(4);
+            var p5 = dfs.GetPath(0);
         }
     }
 }

@@ -18,3 +18,5 @@ July
 28.07 - 621
 29.07 - BubbleSort, MergeSort, HeapSort, QuickSort, QuickSelection, 309, 39
 30.07 - 40, 216, 139, 140
+31.07
+01.08 - UndirectedGraph: DFS, BFS
