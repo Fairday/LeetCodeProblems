@@ -2,17 +2,13 @@
 
 namespace ALGON.LeetCodeProblems.Design
 {
-    public class TopologicalSortGraphViaBfsIndegrees
+    public class TopologicalSortGraphViaBfsIndegrees : DirectedGraphTopologicalSort
     {
-        LinkedList<int> _Items;
-
-        public TopologicalSortGraphViaBfsIndegrees(DirectedGraph graph)
+        public TopologicalSortGraphViaBfsIndegrees(DirectedGraph graph) : base(graph)
         {
-            _Items = new LinkedList<int>();
-            Sort(graph, _Items);
         }
 
-        void Sort(DirectedGraph graph, ICollection<int> items) 
+        protected override void Sort(DirectedGraph graph, ICollection<int> items) 
         {
             var indegrees = GetIndegrees(graph);
             var queue = new Queue<int>();
@@ -40,6 +36,9 @@ namespace ALGON.LeetCodeProblems.Design
                     }
                 }
             }
+
+            if (items.Count != graph.V)
+                items.Clear();
         }
 
         int[] GetIndegrees(DirectedGraph graph) 
@@ -56,7 +55,5 @@ namespace ALGON.LeetCodeProblems.Design
 
             return indegrees;
         }
-
-        public IEnumerable<int> TopologicalOrder => _Items;
     }
 }

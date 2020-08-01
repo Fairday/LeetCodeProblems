@@ -17,8 +17,8 @@ namespace ALGON.LeetCodeProblemsRunner
             graph.AddEdge(3, 5);
             graph.AddEdge(0, 5);
 
-            var bfs = new TopologicalSortGraphViaBfsIndegrees(graph);
-            var items = bfs.TopologicalOrder;
+            var dfs = new TopologicalSortGraphViaDfs(graph);
+            var items = dfs.TopologicalSort;
         }
     }
 }
