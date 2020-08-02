@@ -47,6 +47,15 @@ namespace ALGON.LeetCodeProblems.Design
         {
         }
 
+        public DirectedGraph Reverse() 
+        {
+            var reversed = new DirectedGraph(V);
+            for (int v = 0; v < V; v++)
+                foreach (var w in GetVertexAdjcency(v))
+                    reversed.AddEdge(w, v);
+            return reversed;
+        }
+
         /// <summary>
         /// Create direct edge, ex: 1 -> 2, 1 -> 3, 1 -> 4, {1:2,3,4}
         /// </summary>

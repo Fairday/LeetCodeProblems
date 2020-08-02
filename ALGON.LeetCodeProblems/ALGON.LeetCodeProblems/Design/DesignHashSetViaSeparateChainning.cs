@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ALGON.LeetCodeProblems.Design
 {
-    class StrongConnectedComponentCount
+    class DesignHashSetViaSeparateChainning
     {
     }
 }

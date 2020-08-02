@@ -4,16 +4,21 @@ namespace ALGON.LeetCodeProblems.Design
 {
     public class UndirectedGraphDfs : UndirectedGraphTraverse
     {
-        public UndirectedGraphDfs(int startVertex, UndirectedGraph graph) : base(startVertex, graph)
+        int _StartVertex;
+
+        public UndirectedGraphDfs(int startVertex, UndirectedGraph graph) : base(graph)
         {
+            _StartVertex = startVertex;
+
+            CreateTraverse(_Items, new bool[graph.V], graph);
         }
 
-        protected override void CreateTraverse(int startVertex, ICollection<int> items, bool[] marked, UndirectedGraph graph)
+        protected override void CreateTraverse(ICollection<int> items, bool[] marked, GraphBase graph)
         {
-            dfs(startVertex, items, marked, graph);
+            dfs(_StartVertex, items, marked, graph);
         }
 
-        void dfs(int vertex, ICollection<int> items, bool[] marked, UndirectedGraph graph) 
+        void dfs(int vertex, ICollection<int> items, bool[] marked, GraphBase graph) 
         {
             if (marked[vertex])
                 return;

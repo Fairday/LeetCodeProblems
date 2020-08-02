@@ -4,14 +4,10 @@ namespace ALGON.LeetCodeProblems.Design
 {
     public class TopologicalSortGraphViaDfs : DirectedGraphTopologicalSort
     {
-        LinkedList<int> _Items;
-
         public TopologicalSortGraphViaDfs(DirectedGraph graph) : base(graph)
         {
 
         }
-
-        public IEnumerable<int> TopologicalOrder => _Items;
 
         protected override void Sort(DirectedGraph graph, ICollection<int> items)
         {

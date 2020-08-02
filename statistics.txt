@@ -20,3 +20,4 @@ July
 30.07 - 40, 216, 139, 140
 31.07
 01.08 - UndirectedGraph: DFS, BFS, DirectedGraph: DFS, BFS, 520, 174
+02.08 - 705, 706
