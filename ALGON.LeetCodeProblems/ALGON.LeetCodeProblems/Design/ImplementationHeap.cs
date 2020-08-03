@@ -105,7 +105,7 @@ namespace ALGON.LeetCodeProblems.Design
             var pos = parent.CompareTo(child);
             if (pos == 0)
                 return false;
-            else
+            else              
                 return pos > 0 ? (IsAscending ? true : false) : (IsDescending ? true : false);
         }
 

@@ -7,8 +7,8 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var s = new Solution_290();
-            s.WordPattern("abc", "b c a");
+            var s = new Solution_451();
+            s.FrequencySort("cccaaa");
         }
     }
 }
