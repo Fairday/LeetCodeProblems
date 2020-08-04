@@ -1,5 +1,4 @@
-﻿using ALGON.LeetCodeProblems.Design;
-using ALGON.LeetCodeProblems.Hashtable;
+﻿using ALGON.LeetCodeProblems.BinarySearch;
 
 namespace ALGON.LeetCodeProblemsRunner
 {
@@ -7,8 +6,8 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var s = new Solution_451();
-            s.FrequencySort("cccaaa");
+            var s = new Solution_74();
+            //s.SearchMatrix(2147395599);
         }
     }
 }
