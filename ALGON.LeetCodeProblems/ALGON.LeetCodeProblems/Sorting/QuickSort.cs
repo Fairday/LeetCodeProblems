@@ -86,30 +86,6 @@
             }
         }
 
-        static int Partition_3W(int[] array, int lo, int hi)
-        {
-            var pivotIndex = (lo + hi) / 2;
-            var pivot = array[pivotIndex];
-            var i = lo;
-            var j = hi;
-
-            while (true)
-            {
-                while (array[i] < pivot)
-                    i++;
-
-                while (array[j] > pivot)
-                    j--;
-
-                if (i >= j)
-                    return j;
-
-                Swap(array, i, j);
-                i++;
-                j--;
-            }
-        }
-
         static void Swap(int[] array, int i, int j) 
         {
             var temp = array[i];
