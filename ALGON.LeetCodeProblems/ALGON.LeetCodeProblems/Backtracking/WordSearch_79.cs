@@ -20,7 +20,7 @@ namespace ALGON.LeetCodeProblems.Backtracking
       2. 1 <= board.length <= 200
       3. 1 <= board[i].length <= 200
       4. 1 <= word.length <= 10^3*/
-    public class Solution : SolutionBase
+    public class Solution_79 : SolutionBase
     {
         /// <summary>
         /// Complexity: m * n * 4^K, K - word.Length

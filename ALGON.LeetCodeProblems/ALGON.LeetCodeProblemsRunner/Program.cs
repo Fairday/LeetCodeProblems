@@ -1,6 +1,4 @@
-﻿using ALGON.LeetCodeProblems.PArray;
-using System.Linq;
-using System.Text;
+﻿using ALGON.LeetCodeProblems.LinkedList;
 
 namespace ALGON.LeetCodeProblemsRunner
 {
@@ -8,10 +6,13 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var s = new Solution_239();
-            s.MaxSlidingWindow(new int[] { -6, -10, -7, -1, -9, 9, -8, -4, 10, -5, 2, 9, 0, -7, 7, 4, -2, -10, 8, 7 }, 7);
-            //s.SearchMatrix(2147395599);
-
+            var isl = new Solution_147();
+            var node = new ListNode(-1);
+            node.next = new ListNode(5);
+            node.next.next = new ListNode(3);
+            node.next.next.next = new ListNode(4);
+            node.next.next.next.next = new ListNode(0);
+            isl.InsertionSortList(node);
         }
     }
 }

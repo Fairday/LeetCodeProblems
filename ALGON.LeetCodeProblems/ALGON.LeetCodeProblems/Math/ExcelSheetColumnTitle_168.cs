@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Text;
 
-namespace ALGON.LeetCodeProblems.Math
+namespace ALGON.LeetCodeProblems.PMath
 {
     /*Given a positive integer, return its corresponding column title as appear in an Excel sheet.
 

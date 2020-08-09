@@ -1,4 +1,4 @@
-﻿namespace ALGON.LeetCodeProblems.Math
+﻿namespace ALGON.LeetCodeProblems.PMath
 {
     /*Given an integer n, return the number of trailing zeroes in n!.
 

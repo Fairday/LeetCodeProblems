@@ -10,7 +10,7 @@
                  Since 2 has only one digit, return it.
     Follow up:
     Could you do it without any loop/recursion in O(1) runtime?*/
-    public class Solution
+    public class Solution_258
     {
         // O(N)
         public int AddDigits1(int num)
