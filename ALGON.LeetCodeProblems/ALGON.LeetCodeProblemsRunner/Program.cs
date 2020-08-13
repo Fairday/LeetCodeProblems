@@ -1,4 +1,4 @@
-﻿using ALGON.LeetCodeProblems.LinkedList;
+﻿using ALGON.LeetCodeProblems.Graph;
 
 namespace ALGON.LeetCodeProblemsRunner
 {
@@ -6,13 +6,12 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var isl = new Solution_147();
-            var node = new ListNode(-1);
-            node.next = new ListNode(5);
-            node.next.next = new ListNode(3);
-            node.next.next.next = new ListNode(4);
-            node.next.next.next.next = new ListNode(0);
-            isl.InsertionSortList(node);
+            var solution = new Solution_56();
+            var input = new int[3][];
+            input[0] = new int[] { 4, 5 };
+            input[1] = new int[] { 1, 4 };
+            input[2] = new int[] { 0, 1 };
+            solution.Merge(input);
         }
     }
 }
