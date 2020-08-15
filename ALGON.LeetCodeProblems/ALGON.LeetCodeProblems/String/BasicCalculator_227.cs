@@ -170,15 +170,9 @@ namespace ALGON.LeetCodeProblems.PString
             throw new Exception("Unknown operator");
         }
 
-        string EvalLightPriorityExpression(string expression)
-        {
-            return string.Empty;
-        }
-
         string ParseDigit(ref int i, int l, string s)
         {
             var number = string.Empty;
-
             while (i < l && char.IsDigit(s[i]))
             {
                 number += s[i];

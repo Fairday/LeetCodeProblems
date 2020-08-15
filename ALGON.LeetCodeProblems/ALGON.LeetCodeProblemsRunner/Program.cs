@@ -1,4 +1,4 @@
-﻿using ALGON.LeetCodeProblems.Graph;
+﻿using System;
 
 namespace ALGON.LeetCodeProblemsRunner
 {
@@ -6,12 +6,8 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var solution = new Solution_56();
-            var input = new int[3][];
-            input[0] = new int[] { 4, 5 };
-            input[1] = new int[] { 1, 4 };
-            input[2] = new int[] { 0, 1 };
-            solution.Merge(input);
+            var r = new Random();
+            var x = r.Next(1);
         }
     }
 }

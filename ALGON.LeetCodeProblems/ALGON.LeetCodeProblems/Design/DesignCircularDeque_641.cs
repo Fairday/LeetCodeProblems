@@ -1,4 +1,6 @@
-﻿namespace ALGON.LeetCodeProblems.Design
+﻿using System;
+
+namespace ALGON.LeetCodeProblems.Design
 {
     /*Design your implementation of the circular double-ended queue(deque).
 
