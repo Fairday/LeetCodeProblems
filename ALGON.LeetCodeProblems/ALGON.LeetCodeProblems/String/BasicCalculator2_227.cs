@@ -23,12 +23,66 @@ namespace ALGON.LeetCodeProblems.PString
 
     You may assume that the given expression is always valid.
     Do not use the eval built-in library function.*/
-    // Time complexity O(n)
-    //https://discuss.leetcode.com/topic/16935/share-my-java-solution
-    //Concise solution
+    //Time: O(n)
+    //Space: O(n)
     public class Solution_227
     {
         public int Calculate(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return 0;
+
+            s = s.Replace(" ", "");
+
+            var stack = new Stack<int>();
+            var sign = '+';
+            var num = 0;
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                var ch = s[i];
+
+                if (char.IsDigit(ch))
+                    num = num * 10 + ch - '0';
+                if (!char.IsDigit(ch) || i == s.Length - 1)
+                {
+                    //previous sign
+                    switch (sign)
+                    {
+                        case '+':
+                            {
+                                stack.Push(num);
+                                break;
+                            }
+                        case '-':
+                            {
+                                stack.Push(-num);
+                                break;
+                            }
+                        case '*':
+                            {
+                                stack.Push(stack.Pop() * num);
+                                break;
+                            }
+                        case '/':
+                            {
+                                stack.Push(stack.Pop() / num);
+                                break;
+                            }
+                    }
+                    //assign new sigh
+                    sign = ch;
+                    num = 0;
+                }
+            }
+
+            var res = 0;
+            while (stack.Count > 0)
+                res += stack.Pop();
+            return res;
+        }
+
+        public int Calculate1(string s)
         {
             if (string.IsNullOrEmpty(s))
                 return 0;
@@ -196,11 +250,6 @@ namespace ALGON.LeetCodeProblems.PString
                 return true;
             else
                 return false;
-        }
-
-        bool IsPlusOrMinus(string oper)
-        {
-            return IsPlusOrMinus(oper[0]);
         }
 
         void SkipWhitespaces(ref int i, int l, string s)
