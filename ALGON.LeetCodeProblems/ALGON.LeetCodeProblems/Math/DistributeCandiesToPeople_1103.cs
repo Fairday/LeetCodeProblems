@@ -1,4 +1,6 @@
-﻿namespace ALGON.LeetCodeProblems.Math
+﻿using System.Collections;
+
+namespace ALGON.LeetCodeProblems.Math
 {
     //We distribute some number of candies, to a row of n = num_people people in the following way:
 
