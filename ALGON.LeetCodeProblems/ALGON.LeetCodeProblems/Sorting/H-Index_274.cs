@@ -1,4 +1,6 @@
-﻿namespace ALGON.LeetCodeProblems.Sorting
+﻿using System.Collections.Generic;
+
+namespace ALGON.LeetCodeProblems.Sorting
 {
     //Given an array of citations(each citation is a non-negative integer) of a researcher, write a function to compute the researcher's h-index.
 
