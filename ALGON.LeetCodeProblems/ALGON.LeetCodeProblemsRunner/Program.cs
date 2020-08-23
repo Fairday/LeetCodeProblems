@@ -1,5 +1,4 @@
-﻿using ALGON.LeetCodeProblems.DynamicProgramming;
-using ALGON.LeetCodeProblems.String;
+﻿using ALGON.LeetCodeProblems.Design;
 
 namespace ALGON.LeetCodeProblemsRunner
 {
@@ -7,8 +6,11 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
-            var bc = new Solution_123();
-            bc.MaxProfit(new int[] { 1, 4, 2 });
+            var bc = new Trie();
+            bc.Insert("a");
+            bc.Insert("ab");
+            bc.Insert("abc");
+
         }
     }
 }
