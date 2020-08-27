@@ -1,0 +1,15 @@
+The main target - solve 1000 problems and design all data structures
+
+Road to 1000.
+
+1) Solve 300 problems (300/1000)
+2) Deep repeat of 300 problems (TC, SC, Effective approaches)
+3) Solve 150 (450/1000)
+4) Fast repeat 300 problems and deep repeat 150 problems
+5) Solve 300 (750/1000)
+6) Deep repeat 750 problems
+7) Solve 250 problems (1000/1000)
+8) Deep repeat 1000 problems
+
+Watch and conspect https://www.coursera.org/learn/algorithms-part1
+Watch and conspect https://www.coursera.org/specializations/algorithms
