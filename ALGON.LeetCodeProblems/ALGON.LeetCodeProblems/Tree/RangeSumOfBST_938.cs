@@ -17,7 +17,7 @@
 
     //The number of nodes in the tree is at most 10000.
     //The final answer is guaranteed to be less than 2^31.
-    public class Solution
+    public class Solution_938
     {
         //TC: O(N), where N - nodes in tree
         //SC: O(H), where H - height of tree (recursive space)
