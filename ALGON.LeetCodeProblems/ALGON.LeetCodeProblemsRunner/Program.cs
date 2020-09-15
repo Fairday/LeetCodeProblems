@@ -8,6 +8,9 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
+            var s = "s ";
+            var x = s.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
             var intervals = new int[5][];
             intervals[0] = new int[] { 2, 3 };
             intervals[1] = new int[] { 1, 2 };

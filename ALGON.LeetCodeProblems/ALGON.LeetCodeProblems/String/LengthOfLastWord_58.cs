@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System;
+using System.Linq;
+using System.Text;
 
 namespace ALGON.LeetCodeProblems.String
 {
@@ -35,5 +37,9 @@ namespace ALGON.LeetCodeProblems.String
 
             return sb.ToString().Length;
         }
+
+        //One line
+        public int LengthOfLastWord1(string s)
+            => s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).LastOrDefault()?.Count() ?? 0;
     }
 }

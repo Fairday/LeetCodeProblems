@@ -36,6 +36,15 @@ namespace ALGON.LeetCodeProblems.DynamicProgramming
 
             var a = 0;
             var b = 0;
+            //1, 2, 3, 1
+            //b = 1
+            //a = 2
+            //b = 4
+            //a = 3
+            //b is max
+            //For a: Find maximum between current house and previous house
+            //For b: Find maximum between current house and previous house
+            //1[0 + 1]2[0 + 2]4[1 + 3 or 2 -> 4]3[2 + 1 or 4 -> 4] -> 4
             for (int i = 0; i < nums.Length; i++)
             {
                 if (i % 2 == 0)

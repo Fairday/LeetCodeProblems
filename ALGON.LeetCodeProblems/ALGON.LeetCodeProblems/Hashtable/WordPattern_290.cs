@@ -34,7 +34,17 @@ namespace ALGON.LeetCodeProblems.Hashtable
                 return false;
 
             var map = new Dictionary<string, int>();
-
+            //Pattern: abab
+            //s: dog cat cat dog
+            //1. word_dog -> 0
+            //   char_a -> 0
+            //2. word_cat -> 1
+            //   char_b -> 1
+            //3. 1 (map["word_cat"]) = 1 (map["char_b"]) 
+            //4. 0 (map["word_dog"]) = 0 (map["char_a"]) 
+            //s follows the pottern
+            //Idea: store words and chars with their positions in map with prefixes
+            //We need to store words and chars with prefixes because we can have input like: pattern = abba, s = abba
             for (int i = 0; i < words.Length; i++)
             {
                 if (!map.ContainsKey("char_" + pattern[i].ToString()))
