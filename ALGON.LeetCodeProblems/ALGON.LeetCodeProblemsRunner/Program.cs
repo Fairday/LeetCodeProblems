@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ALGON.LeetCodeProblems.Sorting;
+using ALGON.LeetCodeProblems.String;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -8,6 +10,9 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
+            var sol = new Solution_165();
+            sol.CompareVersion("1.01", "1.001");
+
             var s = "s ";
             var x = s.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
