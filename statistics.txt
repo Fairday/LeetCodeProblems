@@ -73,4 +73,7 @@ September 2020
 17.09
 18.09
 19.09 - 1022, 1291, 165 (repeated)
-20.09 - 980, 66 (repeated), 283, 121 (repeated)
+20.09 - 980, 66 (repeated), 283, 121 (repeated), 216 (repeated)
+21.09
+22.09
+23.09 - 134
