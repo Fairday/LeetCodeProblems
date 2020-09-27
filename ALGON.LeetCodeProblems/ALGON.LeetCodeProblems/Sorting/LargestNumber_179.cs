@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ALGON.LeetCodeProblems.PString
+namespace ALGON.LeetCodeProblems.Sorting
 {
     public class Solution_179
     {
+        //TC: O(nlogn)
+        //SC: O(n)
         public string LargestNumber(int[] nums)
         {
             var numsAsString = nums.Select(n => n.ToString()).ToArray();
