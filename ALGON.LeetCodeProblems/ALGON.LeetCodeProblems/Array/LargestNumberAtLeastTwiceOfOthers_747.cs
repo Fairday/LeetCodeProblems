@@ -1,4 +1,4 @@
-﻿namespace ALGON.LeetCodeProblems.Array
+﻿namespace ALGON.LeetCodeProblems.PArray
 {
     //In a given integer array nums, there is always exactly one largest element.
 
