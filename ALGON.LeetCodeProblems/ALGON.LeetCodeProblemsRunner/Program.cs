@@ -1,4 +1,5 @@
-﻿using ALGON.LeetCodeProblems.Sorting;
+﻿using ALGON.LeetCodeProblems.Backtracking;
+using ALGON.LeetCodeProblems.Sorting;
 using ALGON.LeetCodeProblems.String;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,9 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
+            var wb = new Solution_139();
+            wb.WordBreak("leetcode", new List<string>() { "leet", "code" });
+
             var sol = new Solution_165();
             sol.CompareVersion("1.01", "1.001");
 
