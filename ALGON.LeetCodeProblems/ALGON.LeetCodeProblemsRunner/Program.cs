@@ -1,5 +1,5 @@
 ﻿using ALGON.LeetCodeProblems.Backtracking;
-using ALGON.LeetCodeProblems.Sorting;
+using ALGON.LeetCodeProblems.PArray;
 using ALGON.LeetCodeProblems.String;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,9 @@ namespace ALGON.LeetCodeProblemsRunner
     {
         static void Main(string[] args)
         {
+            var c = new Solution_40();
+            c.CombinationSum2(new[] { 1, 1, 2, 5, 6, 7, 10 }, 8);
+
             var wb = new Solution_139();
             wb.WordBreak("leetcode", new List<string>() { "leet", "code" });
 

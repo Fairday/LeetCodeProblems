@@ -34,6 +34,8 @@ namespace ALGON.LeetCodeProblems.PArray
     ]*/
     public class Solution_40
     {
+        //TC: O(nlogn)
+        //SC: O(N) of subsum, O(N) stack
         public IList<IList<int>> CombinationSum2(int[] candidates, int target)
         {
             Array.Sort(candidates);
