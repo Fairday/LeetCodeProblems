@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace ALGON.LeetCodeProblems.Array
+namespace ALGON.LeetCodeProblems.PArray
 {
     //Given an array of integers and an integer k, you need to find the total number of continuous subarrays whose sum equals to k.
 
