@@ -24,7 +24,7 @@
 
     //Input: nums = [1], target = 0
     //Output: 0
-    public class SearchInsertPosition_35
+    public sealed class SearchInsertPosition_35
     {
         //TC: O(log N)
         //SC: O(1)

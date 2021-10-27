@@ -23,7 +23,7 @@ namespace Day1.BinarySearch
     //-104 < nums[i], target < 104
     //All the integers in nums are unique.
     //nums is sorted in ascending order.
-    public class BinarySearch_704
+    public sealed class BinarySearch_704
     {
         //TC: O(log N)
         //SC: O(1)

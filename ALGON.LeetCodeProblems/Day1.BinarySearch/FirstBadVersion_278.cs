@@ -26,7 +26,7 @@ namespace Day1.BinarySearch
     //Constraints:
 
     //1 <= bad <= n <= 231 - 1
-    public class FirstBadVersion_278
+    public sealed class FirstBadVersion_278
     {
         //TC: O(N)
         //SC: O(1)
