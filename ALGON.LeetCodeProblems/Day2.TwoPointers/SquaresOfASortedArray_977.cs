@@ -22,8 +22,9 @@ namespace Day2.TwoPointers
  
     //Follow up: Squaring each element and sorting the new array is very trivial, could you find an O(n) solution using a different approach?
     public sealed class SquaresOfASortedArray_977
-    {    //TC: O(N log N)
-         //SC: O(N log N)
+    {    
+        //TC: O(N log N)
+        //SC: O(N log N)
         public int[] SortedSquares_NaiveApproach(int[] nums)
         {
             if (nums == null)
