@@ -22,6 +22,8 @@ namespace Day2.TwoPointers
     //Follow up: Could you minimize the total number of operations done?
     public class MoveZeroes_283
     {
+        //TC: O(N)
+        //SC: O(N)
         public void MoveZeroes_NaiveApproach(int[] nums)
         {
             //You should use additional array with non zero numbers and insert them from start
