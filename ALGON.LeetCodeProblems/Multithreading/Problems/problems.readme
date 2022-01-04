@@ -9,4 +9,3 @@ Implementation of some primitives:
 6. Implementing Semaphore
 7. Implementing AutoResetEvent
 8. Implementing Barrier
-9. Implementing CountdownEvent

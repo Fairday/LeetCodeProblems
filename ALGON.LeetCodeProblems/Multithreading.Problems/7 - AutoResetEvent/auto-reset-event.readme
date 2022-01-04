@@ -1,0 +1,7 @@
+AutoResetEvent allowes any number of threads to wait on AutoResetEvent object. Signal allowes one thread to move forward. 
+AutoResetEvent returns to unsignaled state after signaling. If AutoResetEvent is already in signaled state, then first thread moves forward without blocking.
+
+Protocol.
+
+autoresetevent.wait(); - waits for signal to move forward
+autoresetevent.signal(); - allowes one of signal threads to move forward
