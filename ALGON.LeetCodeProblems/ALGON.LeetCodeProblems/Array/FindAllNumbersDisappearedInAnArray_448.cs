@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ALGON.LeetCodeProblems.Array
+namespace ALGON.LeetCodeProblems.PArray
 {
     //Given an array of integers where 1 ≤ a[i] ≤ n(n = size of array), some elements appear twice and others appear once.
 
