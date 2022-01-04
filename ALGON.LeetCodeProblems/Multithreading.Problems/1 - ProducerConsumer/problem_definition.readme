@@ -1,0 +1,42 @@
+Classic multiprocess synchronization problem (alternative names - bounded-buffer problem, blocking-queue problem, producer-consumer problem).
+
+Given: Producers, Consumers, shared buffer. Producers put in shared buffer, Consumers take out from shared buffer. 
+Queue variants: 
+1. Multi-producer/multi-consumer queues (MPMC)
+2. Single-producer/multi-consumer queues (SPMC)
+3. Multi-producer/single-consumer queues (MPSC)
+4. Single-producer/single-consumer queues (SPSC)
+Queue features:
+1. Infinite(unbounded)/Finite(bounded) size of shared buffer + overflow behavior
+2. Behavior on failure
+	When a queue is empty/full consumers/producers get blocked
+	When a queue is empty/full consumers/producers instantly get 'false'
+3. With/without support for message priorities
+4. FIFO/LIFO + FIFO/LIFO per producer + no ordering
+5. Waitfree/Lockfree/Obstruction-free/Blocking producers/consumers
+
+Implementation variants:
+1. Blocking
+	With mutex
+	With monitor
+	With semaphore
+2. Non-blocking (waitfree/lockfree/obstruction-free) - Termination-safety (Waitfree, lockfree and obstruction-free algorithms provide a guarantee of termination-safety. That is, a terminated thread does not prevent system-wide forward progress)
+
+Potencial issues:
+1. race conditions
+2. deadlocks
+3. livelocks
+4. priority inversions
+5. starvations
+
+References: 
+1. https://github.com/microsoft/referencesource/tree/master/mscorlib/system/collections/Concurrent
+2. https://en.wikipedia.org/wiki/Producer%E2%80%93consumer_problem
+3. https://www.markodevcic.com/post/Priority_producer_consumer_queue_/
+4. https://www.1024cores.net/home/in-russian/ottenki-fifo
+5. https://www.1024cores.net/home/lock-free-algorithms/introduction
+6. https://www.1024cores.net/home/lock-free-algorithms/queues
+7. https://habr.com/ru/post/198104/
+8. https://devblogs.microsoft.com/dotnet/an-introduction-to-system-threading-channels/
+9. https://habr.com/ru/post/508726/
+10. https://www.educative.io/courses/c-sharp-concurrency-for-senior-engineering-interviews

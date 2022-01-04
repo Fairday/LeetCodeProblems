@@ -67,17 +67,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Multithreading", "Multithre
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Problems", "Problems", "{B65A414C-003B-46AE-BEEB-D6E3B26164B5}"
 	ProjectSection(SolutionItems) = preProject
-		problems.txt = problems.txt
+		Multithreading\Problems\problems.readme = Multithreading\Problems\problems.readme
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - ProducerConsumer", "1 - ProducerConsumer", "{B883DBD3-63AE-4D00-BE53-5905D24DE911}"
 	ProjectSection(SolutionItems) = preProject
-		Multithreading\Problems\1 - ProducerConsumer\problem_definition.txt = Multithreading\Problems\1 - ProducerConsumer\problem_definition.txt
+		Multithreading\Problems\1 - ProducerConsumer\problem_definition.readme = Multithreading\Problems\1 - ProducerConsumer\problem_definition.readme
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 - Semaphore", "6 - Semaphore", "{415BBC99-BDB4-46C5-BFCB-FFBB36231456}"
 	ProjectSection(SolutionItems) = preProject
-		Multithreading\Problems\6 - Semaphore\problem_definition.txt = Multithreading\Problems\6 - Semaphore\problem_definition.txt
+		Multithreading\Problems\6 - Semaphore\problem_definition.readme = Multithreading\Problems\6 - Semaphore\problem_definition.readme
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 - AutoResetEvent", "7 - AutoResetEvent", "{E39180B3-ABAF-4EE3-B24B-9DAEE1401BC5}"
@@ -95,6 +95,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semaphore.Runner", "Multithreading\Problems\6 - Semaphore\Semaphore.Runner\Semaphore.Runner.csproj", "{DDDFAE10-1804-415C-ABF7-487102A6969D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Semaphore.Solutions", "Multithreading\Problems\6 - Semaphore\Semaphore.Solutions\Semaphore.Solutions.csproj", "{CB5392A3-D473-4302-B6B0-2E186DE22A98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multithreading.Problems", "Multithreading.Problems\Multithreading.Problems.csproj", "{3B1BC2D9-FB5C-4B72-AB13-4A54795EC318}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -194,6 +196,10 @@ Global
 		{CB5392A3-D473-4302-B6B0-2E186DE22A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB5392A3-D473-4302-B6B0-2E186DE22A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB5392A3-D473-4302-B6B0-2E186DE22A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B1BC2D9-FB5C-4B72-AB13-4A54795EC318}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B1BC2D9-FB5C-4B72-AB13-4A54795EC318}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B1BC2D9-FB5C-4B72-AB13-4A54795EC318}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B1BC2D9-FB5C-4B72-AB13-4A54795EC318}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
