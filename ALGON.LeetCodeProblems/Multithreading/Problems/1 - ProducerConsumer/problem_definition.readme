@@ -1,12 +1,12 @@
-Задача представляет собой проблему мультипроцессной синхронизации (альтернативные названия - bounded-buffer problem, blocking-queue problem, producer-consumer problem).
+Classic multiprocess synchronization problem (alternative names - bounded-buffer problem, blocking-queue problem, producer-consumer problem).
 
-Дано: Producers, Сonsumers, shared buffer. Producers пишут в shared buffer, Consumers читают из shared buffer. 
-Подвиды задачи: 
+Given: Producers, Сonsumers, shared buffer. Producers put in shared buffer, Consumers take out from shared buffer. 
+Queue variants: 
 1. Multi-producer/multi-consumer queues (MPMC)
 2. Single-producer/multi-consumer queues (SPMC)
 3. Multi-producer/single-consumer queues (MPSC)
 4. Single-producer/single-consumer queues (SPSC)
-Характеристики очереди:
+Queue features:
 1. Infinite(unbounded)/Finite(bounded) size of shared buffer + overflow behavior
 2. Behavior on failure
 	When a queue is empty/full consumers/producers get blocked
@@ -15,14 +15,14 @@
 4. FIFO/LIFO + FIFO/LIFO per producer + no ordering
 5. Waitfree/Lockfree/Obstruction-free/Blocking producers/consumers
 
-Подходы к решения:
+Implementation variants:
 1. Blocking
-	С помощью mutex
-	С помощью monitor
-	С помощью semaphore
+	With mutex
+	With monitor
+	With semaphore
 2. Non-blocking (waitfree/lockfree/obstruction-free) - Termination-safety (Waitfree, lockfree and obstruction-free algorithms provide a guarantee of termination-safety. That is, a terminated thread does not prevent system-wide forward progress)
 
-Потенциальные проблемы:
+Potencial issues:
 1. race conditions
 2. deadlocks
 3. livelocks
