@@ -1,6 +1,6 @@
 Classic multiprocess synchronization problem (alternative names - bounded-buffer problem, blocking-queue problem, producer-consumer problem).
 
-Given: Producers, Ñonsumers, shared buffer. Producers put in shared buffer, Consumers take out from shared buffer. 
+Given: Producers, Consumers, shared buffer. Producers put in shared buffer, Consumers take out from shared buffer. 
 Queue variants: 
 1. Multi-producer/multi-consumer queues (MPMC)
 2. Single-producer/multi-consumer queues (SPMC)
