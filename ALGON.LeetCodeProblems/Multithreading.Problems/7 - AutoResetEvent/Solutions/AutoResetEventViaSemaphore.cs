@@ -4,12 +4,16 @@ namespace Multithreading.Problems._7___AutoResetEvent.Solutions
 {
     public sealed class AutoResetEventViaSemaphore : AutoResetEventBase
     {
-        public override void Signal()
+        public AutoResetEventViaSemaphore(bool initialSignaledState) : base(initialSignaledState)
+        {
+        }
+
+        public override void Wait()
         {
             throw new System.NotImplementedException();
         }
 
-        public override void Wait()
+        public override void Signal()
         {
             throw new System.NotImplementedException();
         }
