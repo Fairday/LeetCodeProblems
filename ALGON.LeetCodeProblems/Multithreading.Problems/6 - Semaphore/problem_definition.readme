@@ -1,0 +1,7 @@
+Semaphore is a construct that allows threads to access shared resources in parallel. Semaphore has fixed numbers of permites to give out. 
+When all permites are given out, new threads are needed to wait for permit. Threads should return back permits after completion work with shared resources.
+
+Protocol.
+
+semaphore.acquire(); - gaining a permit
+semaphore.release(); - returning a permit
