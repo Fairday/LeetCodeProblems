@@ -2,7 +2,7 @@
 
 namespace ProducerConsumer.Solutions.Internal
 {
-    public abstract class BaseSafeWaitAndAcquireHandle : ISafeWaitAndAcquireHandle, IDisposable
+    internal abstract class BaseSafeWaitAndAcquireHandle : ISafeWaitAndAcquireHandle, IDisposable
     {
         private bool _disposed;
         protected string Name { get; }

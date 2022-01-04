@@ -3,7 +3,7 @@ using System.Threading;
 
 namespace ProducerConsumer.Solutions.Internal
 {
-    public sealed class MonitorWaitAndAcquireHandle : BaseSafeWaitAndAcquireHandle
+    internal sealed class MonitorWaitAndAcquireHandle : BaseSafeWaitAndAcquireHandle
     {
         private object _padLock;
 
