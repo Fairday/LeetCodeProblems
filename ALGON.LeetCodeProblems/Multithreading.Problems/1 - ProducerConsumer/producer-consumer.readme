@@ -21,6 +21,7 @@ Implementation variants:
 	With monitor
 	With semaphore
 2. Non-blocking (waitfree/lockfree/obstruction-free) - Termination-safety (Waitfree, lockfree and obstruction-free algorithms provide a guarantee of termination-safety. That is, a terminated thread does not prevent system-wide forward progress)
+	CAS (CompareAndSwap) + SpinWait tecniques can be used for implemntation lockfree algorithms
 
 Potencial issues:
 1. race conditions

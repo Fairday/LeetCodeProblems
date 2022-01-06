@@ -3,5 +3,5 @@ AutoResetEvent returns to unsignaled state by thread that moved forward. If Auto
 
 Protocol.
 
-autoresetevent.wait(); - waits for signal to move forward
+autoresetevent.wait(); - blocks thread for waiting a signal to move forward
 autoresetevent.signal(); - allowes one of waiting threads to move forward

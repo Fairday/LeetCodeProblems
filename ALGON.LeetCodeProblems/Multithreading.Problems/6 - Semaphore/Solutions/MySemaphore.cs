@@ -14,40 +14,52 @@ namespace Multithreading.Problems._6___Semaphore.Solutions
 
         public override void Acquire()
         {
-            //try to enter in critical section
-            Monitor.Enter(_padLock);
+            try
+            {
+                //try to enter in critical section
+                Monitor.Enter(_padLock);
 
-            //no available permits
-            while (_availablePermits == 0)
-                //wait for permit
-                Monitor.Wait(_padLock);
+                //no available permits
+                while (_availablePermits == 0)
+                    //wait for permit
+                    Monitor.Wait(_padLock);
 
-            //gain a permit
-            _availablePermits--;
+                //gain a permit
+                _availablePermits--;
+            }
+            finally
+            {
+                //notify all threads in wait set
+                Monitor.PulseAll(_padLock);
 
-            //notify all threads in wait set
-            Monitor.PulseAll(_padLock);
-            //exit from critical section
-            Monitor.Exit(_padLock);
+                //exit from critical section
+                Monitor.Exit(_padLock);
+            }
         }
 
         public override void Release()
         {
-            //try to enter in critical section
-            Monitor.Enter(_padLock);
+            try
+            {
+                //try to enter in critical section
+                Monitor.Enter(_padLock);
 
-            //all permits available
-            while (_availablePermits == _maxPermits)
-                //wait for possibility to return permit
-                Monitor.Wait(_padLock);
+                //all permits available
+                while (_availablePermits == _maxPermits)
+                    //wait for possibility to return permit
+                    Monitor.Wait(_padLock);
 
-            //return a permit
-            _availablePermits++;
+                //return a permit
+                _availablePermits++;
+            }
+            finally
+            {
+                //notify all threads in wait set
+                Monitor.PulseAll(_padLock);
 
-            //notify all threads in wait set
-            Monitor.PulseAll(_padLock);
-            //exit from critical section
-            Monitor.Exit(_padLock);
+                //exit from critical section
+                Monitor.Exit(_padLock);
+            }
         }
     }
 }

@@ -14,33 +14,43 @@ namespace Multithreading.Problems._7___AutoResetEvent.Solutions
 
         public override void Wait()
         {
-            //try to enter in critical section
-            Monitor.Enter(_padLock);
+            try
+            {
+                //try to enter in critical section
+                Monitor.Enter(_padLock);
 
-            //if unsignaled state then wait
-            while (!_signaled)
-                Monitor.Wait(_padLock);
+                //if unsignaled state then wait
+                while (!_signaled)
+                    Monitor.Wait(_padLock);
 
-            //only one thread can move forward, hence we need to off signal state
-            _signaled = false;
-
-            //exit from critical section
-            Monitor.Exit(_padLock);
+                //only one thread can move forward, hence we need to off signal state
+                _signaled = false;
+            }
+            finally
+            {
+                //exit from critical section
+                Monitor.Exit(_padLock);
+            }
         }
 
         public override void Signal()
         {
-            //try to enter in critical section
-            Monitor.Enter(_padLock);
+            try
+            {
+                //try to enter in critical section
+                Monitor.Enter(_padLock);
 
             //idemptotently enable signal state
             _signaled = true;
 
             //notify threads in wait set about possibility to move forward
             Monitor.Pulse(_padLock);
-
-            //exit from critical section
-            Monitor.Exit(_padLock);
+            }
+            finally
+            {
+                //exit from critical section
+                Monitor.Exit(_padLock);
+            }
         }
     }
 }
